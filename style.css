@@ -3105,9 +3105,10 @@ global-navigation active
 }
 
 .l-nav_about:hover::after {
-  width: 80%;
+  width: 75%;
   background-color: #2d2d2d;
   transition: 0.5s;
+  margin-top: 1px;
 }
 
 .l-nav_work,
