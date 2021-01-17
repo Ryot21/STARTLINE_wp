@@ -38,15 +38,18 @@
         <!-- PC・TB　メニュー -->
         <div class="header-nav">
           <nav class="globalnavi">
-
+            <!-- ul -->
             <?php $args = array(
               'menu' => 'global-navigation', //管理画面で作成したメニュー名
               'menu_class' => 'gnavi-list', //メニューを構成する<ul>タグのクラス名
               'container' => 'false', //<ul>タグを囲っている<div>タグについて
-              'depth' => '0',
-            );
-            wp_nav_menu($args);
+              );
+              wp_nav_menu($args);
             ?>
+
+
+
+
             <!-- <ul class="gnavi-list">
 
                 <li class="l-nav l-nav_about">

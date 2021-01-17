@@ -5564,3 +5564,6 @@ global-navigation active
     padding-bottom: 70px;
   }
 }
+.current-menu-item, .current-menu-works:nth-child(2), .current-menu-blog:nth-child(3) {
+  color: #ebae03 !important;
+}
