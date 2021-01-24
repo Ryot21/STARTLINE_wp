@@ -13,14 +13,6 @@
         <img src="<?php echo get_template_directory_uri(); ?>/images/my_desktop.jpg" class="main-img" alt="スタートラインのTOP写真" />
       </div>
   </div>
-  <!-- SNS -->
-  <!-- <div id="sns" class="l-sns">
-    <ul class="social">
-      <li class="instagram icon"><a class="social-btn" href="#"><img src="/images/icon/instagram.svg" alt="インスタグラム"></a></li>
-      <li class="facebook icon"><a class="social-btn" href="#"><img src="/images/icon/facebook.svg" alt="フェイスブック"></a></li>
-      <li class="twitter icon"><a class="social-btn" href="#"><img src="/images/icon/twitter.svg" alt="ツイッター"></a></li>
-    </ul>
-  </div> -->
 
   <!-- ここからコンテンツ -->
   <main id="main">

@@ -65,10 +65,11 @@ span {
 .top-page-ttl,
 .btn-container,
 .single-ttl,
+.archive-ttl,
 .mobile-menu__ttl,
 .mobile-menu__link {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+
+ 
 }
 
 .top-page-ttl {
@@ -77,6 +78,9 @@ span {
 
 .main-font {
   font-size: 30px;
+}
+.sub-font {
+  font-size: 18px;
 }
 
 .lg-ttl {
@@ -3203,6 +3207,16 @@ global-navigation active
   padding-bottom: 30px;
   text-shadow: 3px 3px 2px silver;
 }
+.archive-ttl {
+  display: inline-block;
+  padding-bottom: 10px;
+  text-shadow: 3px 3px 2px silver;
+}
+.single-sub-ttl {
+  color: #5f5555;
+  padding-bottom: 64px;
+  /* text-shadow: 3px 3px 2px silver; */
+}
 
 .single-ttl-text {
   text-align: start;
@@ -3554,19 +3568,19 @@ global-navigation active
 =======================*/
 
 
-.blog-lists {
+.cat-lists {
   display: flex;
   text-align: center;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
-.blog-list {
+.cat-list {
   position: relative;
   padding: 0 10px;
   font-size: 16px;
   font-weight: bold;
 }
-.blog-list:nth-child(2) :before {
+.cat-list:nth-child(n+2) :before {
   position: absolute;
   content: "";
   width: 1px;
@@ -5564,6 +5578,6 @@ global-navigation active
     padding-bottom: 70px;
   }
 }
-.current-menu-item, .current-menu-works:nth-child(2), .current-menu-blog:nth-child(3) {
+.current-menu-item, .current-menu-works:nth-child(2), .current-menu-blog:nth-child(3), .current {
   color: #ebae03 !important;
 }

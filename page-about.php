@@ -12,7 +12,6 @@ Template Name: about template
     <div class="main-inner">
       <section class="l-container">
         <h2 class="single-ttl main-font">About</h2>
-        <?php get_template_part('template-parts/breadcrumb'); ?>
 
         <p class="single-ttl-text">2013年3月大学卒業。<br>7年間印刷会社にて勤務。<br>2020年2月テックキャンプで学習開始。<br>2020年9月より東京都内のweb制作会社でデザイン・コーディングの業務</p>
         <div class="about-box">
@@ -29,9 +28,9 @@ Template Name: about template
               <dt>趣味</dt>
               <dd>テニス / NBA観賞</dd>
               <dt>事業内容</dt>
-              <dd>HTML・CSSコーディング/WEB制作</dd>
-              <dt>メールアドレス</dt>
-              <dd>123@gmail.com<br>お問い合わせは上記のE-mailからお願いします。</dd>
+              <dd>HTML・CSS・wordpress / WEB制作</dd>
+              <dt>お問い合わせ</dt>
+              <dd>お問い合わせフォームからご連絡下さいますようよろしくお願いします。</dd>
             </dl>
           </div>
         </div>

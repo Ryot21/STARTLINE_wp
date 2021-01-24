@@ -40,18 +40,28 @@ function attribute_add_nav_menu($item_output, $item){
 
 // グローバルナビで現在地にクラスを付与する
 function make_menu_current( $classes, $item ) {
-	//現在表示している投稿の投稿タイプ名が「worksかつ詳細ページ」の場合
-    if ( get_post_type() === 'works' && is_single() )  {
+
+	/*
+	下記のパターンの時に'current-menu-works'を付与する。
+	1.現在表示している投稿タイプ名が「works(この場合ブログ)かつ詳細ページ」の場合、
+	2.現在表示している投稿タイプ名が「works(この場合ブログ)かつカテゴリー別の一覧ページ」の場合
+	*/
+    if ( get_post_type() === 'works' && is_single() || 'works' && is_tax() )  {
         $classes[] = 'current-menu-works';
 	} 
-	//現在表示している投稿の投稿タイプ名が「post(この場合ブログ)かつ詳細ページ」の場合
-	elseif( get_post_type() === 'post' && is_single() )  {
+	/*
+	下記のパターンの時に'current-menu-blog'を付与する。
+	1.現在表示している投稿タイプ名が「post(この場合ブログ)かつ詳細ページ」の場合、
+	2.現在表示している投稿タイプ名が「post(この場合ブログ)かつカテゴリー別の一覧ページ」の場合
+	*/
+	elseif( get_post_type() === 'post' && is_single() || 'post' && is_category() )  {
 			$classes[] = 'current-menu-blog';
 	}
     $classes = array_unique( $classes );
     return $classes;
 }
 add_filter( 'nav_menu_css_class', 'make_menu_current', 10, 2 );
+
 
 
 // ブログアーカイブページにて「続きを読む」から詳細ページに遷移できるようにする

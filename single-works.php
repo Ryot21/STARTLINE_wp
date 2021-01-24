@@ -33,11 +33,12 @@
 								<img src="<?php echo $acf_mainpic[0]; ?>" class="work-img" alt="">
 							</div>
 						</header>
+						
 
 						<!-- 概要 -->
 						<p class="work-subtitle"><span>DESCRIPTION</span></p>
 						<p class="work-subtext"><?php echo get_field('概要'); ?></p>
-						  
+						
 						<!-- サイトTYPE -->
 						<p class="work-subtitle"><span>サイトTYPE</span></p>
 						<p class="work-subtext"><?php echo get_field('TYPE'); ?></p>

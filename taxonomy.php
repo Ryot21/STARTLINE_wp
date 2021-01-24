@@ -1,9 +1,3 @@
-<?php
-/*
-Template Name: works template
-*/
-?>
-
 <?php get_header(); ?>
 
 <!-- ここからコンテンツ -->
@@ -44,15 +38,7 @@ Template Name: works template
 
 				</ul>
 					<ul>
-							<?php
-									$args = array(
-									'post_type' => array('works'),
-									'paged' => $paged,
-									'posts_per_page' => '12'
-									);
-								
-							?>
-							<?php query_posts( $args ); ?>
+		
 							<?php if(have_posts()):while(have_posts()):the_post(); ?>
 
 							<?php
