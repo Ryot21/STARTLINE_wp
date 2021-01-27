@@ -31,7 +31,7 @@
         <!-- サイトアイコン　右側 -->
         <h1 class="header-logo">
           <a class="header-logo-icon" href="<?php echo home_url(); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/icon/Portfolio_1@3x.png" alt="STARTLINE" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/icon/startline_favicon_iphone@3x.png" alt="STARTLINE" />
             <span class="header-logo-icon-name">STARTLINE</span>
           </a>
         </h1>
@@ -46,8 +46,16 @@
               );
               wp_nav_menu($args);
             ?>
-
-
+            <?php if (is_user_logged_in()) { ?>
+              <ul class="gnavi-list">
+                <li class="l-nav l-nav_private-works">
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>private-works/">
+                    PRIVATE WORKS<br>
+                    <p class="header_nav_bottom">非公開実績</p>
+                  </a>
+                </li>
+              </ul>
+            <?php } ?>
 
 
             <!-- <ul class="gnavi-list">
@@ -107,6 +115,18 @@
                       <span class="ja-title">制作物</span>
                   </a>
               </li>
+              <!-- ログインしていないと確認できないようにする。 -->
+              <?php if (is_user_logged_in()) { ?>
+
+              <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="<?php echo esc_url( home_url( '/' ) ); ?>private-works/">
+                      <span class="en-title">PRIVATE WORKS</span>
+                      <span class="ja-title">非公開実績</span>
+                </a>
+              </li>
+
+              <?php } ?>
+
               <li class="mobile-menu__item">
                   <a class="mobile-menu__link" href="/blog/">
                       <span class="en-title">BLOG</span>

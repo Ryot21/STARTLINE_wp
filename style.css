@@ -2758,6 +2758,9 @@ use icon fontawesome
 /*=========================
 ハンバーガーメニュー button 
 ==========================*/
+.globalnavi {
+  display: flex;
+}
 
 .gnav-btn {
   width: 30px;
@@ -3005,6 +3008,7 @@ global-navigation active
 .header-top .header-logo-icon-name {
   font-size: 23px;
   line-height: 1.8;
+  padding-left: 10px;
 }
 
 .header-top .header-nav {
@@ -3109,19 +3113,21 @@ global-navigation active
 }
 
 .l-nav_about:hover::after {
-  width: 75%;
+  width: 78%;
   background-color: #2d2d2d;
   transition: 0.5s;
   margin-top: 1px;
 }
 
 .l-nav_work,
-.l-nav_blog {
+.l-nav_blog,
+.l-nav_private-works {
   position: relative;
 }
 
 .l-nav_work::after,
-.l-nav_blog::after {
+.l-nav_blog::after,
+.l-nav_private-works::after {
   position: absolute;
   content: '';
   top: 21px;
@@ -3131,14 +3137,24 @@ global-navigation active
 }
 
 .l-nav_work:hover .header_nav_bottom,
-.l-nav_blog:hover .header_nav_bottom {
+.l-nav_blog:hover .header_nav_bottom,
+.l-nav_private-works .header_nav_bottom {
   color: #2d2d2d;
   transition: 0.5s;
 }
 
-.l-nav_work:hover::after,
+.l-nav_work:hover::after {
+  width: 72%;
+  background-color: #2d2d2d;
+  transition: 0.5s;
+}
 .l-nav_blog:hover::after {
-  width: 69%;
+  width: 67%;
+  background-color: #2d2d2d;
+  transition: 0.5s;
+}
+.l-nav_private-works:hover::after {
+  width: 86%;
   background-color: #2d2d2d;
   transition: 0.5s;
 }
@@ -3152,7 +3168,7 @@ global-navigation active
   position: absolute;
   content: '';
   top: 21px;
-  left: 18px;
+  left: 12px;
   height: 2px;
   width: 1px;
 }
@@ -3163,7 +3179,7 @@ global-navigation active
 }
 
 .l-nav_contact:hover::after {
-  width: 63%;
+  width: 75%;
   background-color: #2d2d2d;
   transition: 0.5s;
 }
@@ -5579,5 +5595,6 @@ global-navigation active
   }
 }
 .current-menu-item, .current-menu-works:nth-child(2), .current-menu-blog:nth-child(3), .current {
-  color: #ebae03 !important;
+  color: #F4EA00 !important;
+  text-shadow: 1px 0px 0px silver;
 }
