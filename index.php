@@ -6,7 +6,7 @@
   <div id="main">
     <div class="main-inner">
       <section class="l-container">
-        <h2 class="single-ttl main-font">BLOG</h2>
+        <h2 class="single-ttl main-font">OG</h2>
         <div class="blog-content">
 
 <!-- 工事中 -->

@@ -3987,9 +3987,11 @@ global-navigation active
 }
 .work-mainpic, .works-pic__list {
   margin-bottom: 15px;
-  padding-top: 20px;
+  padding-top: 40px;
 }
-
+.work-mainpic, .works-pic__list li {
+  padding-bottom: 30px;
+}
 
 /* ユーティリティ(color, size, spacing, etc.) */
 

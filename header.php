@@ -49,7 +49,7 @@
             <?php if (is_user_logged_in()) { ?>
               <ul class="gnavi-list">
                 <li class="l-nav l-nav_private-works">
-                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>private-works/">
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>privateworks/">
                     PRIVATE WORKS<br>
                     <p class="header_nav_bottom">非公開実績</p>
                   </a>
