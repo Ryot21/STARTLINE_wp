@@ -119,7 +119,7 @@
               <?php if (is_user_logged_in()) { ?>
 
               <li class="mobile-menu__item">
-                <a class="mobile-menu__link" href="<?php echo esc_url( home_url( '/' ) ); ?>private-works/">
+                <a class="mobile-menu__link" href="<?php echo esc_url( home_url( '/' ) ); ?>privateworks/">
                       <span class="en-title">PRIVATE WORKS</span>
                       <span class="ja-title">非公開実績</span>
                 </a>
