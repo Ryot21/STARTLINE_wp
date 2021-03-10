@@ -66,7 +66,7 @@ add_filter( 'nav_menu_css_class', 'make_menu_current', 10, 2 );
 
 // ブログアーカイブページにて「続きを読む」から詳細ページに遷移できるようにする
 function new_excerpt_more($post) {
-     return '<a href="'. get_permalink($post->ID) . '">' . '続きを読む' . '</a>';
+    return '<a href="'. get_permalink($post->ID) . '">' . '続きを読む' . '</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
