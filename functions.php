@@ -1,10 +1,4 @@
-<?php add_action('wp_body_open', function() {
-	?>
-	<!-- ここに挿入したいソースコードなどを記述 -->
-	
-	<?php
-});
-
+<?php
 
 
 // ↓タイトルタグを使わずにwordpressで設定した「タイトル」を吐き出す。
@@ -12,7 +6,7 @@ function setup_my_theme() {
 	add_theme_support( 'title-tag' );
  }
 add_action( 'after_setup_theme', 'setup_my_theme');
-add_theme_support( 'post-thumbnails' ); 
+// add_theme_support( 'post-thumbnails' ); 
 
 
 
@@ -72,3 +66,4 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 
 
+?>

@@ -11,13 +11,13 @@
     <div class="footer-navblock">
       <ul class="footer-nav">
 
-        <a href="#">
+        <a href="https://www.facebook.com/ryot21.maeda/" target="_blank">
           <img src="<?php echo get_template_directory_uri(); ?>/images/icon/facebook.svg" class="icon" alt="Facebook" />Facebook
         </a>/
-        <a href="#">
+        <a href="https://www.instagram.com/m.ryot21/" target="_blank">
           <img src="<?php echo get_template_directory_uri(); ?>/images/icon/instagram.svg" class="icon" alt="Instagram" />Instagram
         </a>/
-        <a href="#">
+        <a href="https://twitter.com/MaedaRyota71" target="_blank">
           <img src="<?php echo get_template_directory_uri(); ?>/images/icon/twitter.svg" class="icon" alt="Twitter" />Twitter
         </a>
 
