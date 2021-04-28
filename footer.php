@@ -30,13 +30,11 @@
     </div>
   </div>
   <?php wp_footer(); ?>
-
 </footer><!-- / l-wrapper -->
-
 <!-- 絶対消さないで！！！↓ -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-2.2.2.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/script.min.js"></script>
-
+<script src="<?php bloginfo('template_url'); ?>/js/aos.js"></script>
 
 </body>
 </html>
