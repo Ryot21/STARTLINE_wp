@@ -1,22 +1,85 @@
+<?php
+  if(!is_home()):
+    if(get_post_type() === 'privateworks')://Basic認証を設定するページを指定
+      $userArray = array(
+        "Ryota"/* ユーザー名 */ => "20210423"/* pass */
+      );
+      basic_auth($userArray);
+    endif;
+  endif;
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="keywords" content="ポートフォリオ, Ryota Maeda, 前田龍汰, web制作">
-  <meta content="<?php bloginfo('description'); ?>">
+  <!-- ディスクリプション -->
+  <?php
+      if(is_home()) {
+        $description = get_bloginfo('description');
+      } else if(is_archive('works')) {//制作実績
+        $description = 'STARTLINEの制作実績一覧ページです。';
+      } else if(is_singular('works')) {
+        $postsummary = get_field('acf_works_description');
+        $postsummary = str_replace("\n", "", $postsummary);
+        $postsummary = mb_substr($postsummary, 0, 50). "…";
+        $description = $postsummary . ' | STARTLINE';
+      } else if(is_single()) {
+        $postsummary = strip_tags($post->post_content);
+        $textsearch = array('\n','<br>','<br />');
+        $postsummary = str_replace($textsearch, '', $postsummary);
+        $postsummary = mb_substr($postsummary, 0, 50). '…';
+        $description = $postsummary . ' | STARTLINE';
+      } else if(is_category()) {//ブログ
+        $description = 'STARTLINEのブログ一覧ページです。私たちの日常を公開します。';
+      } else if(is_page('contact')) {//お問い合わせ
+        $description = 'STARTLINEのお問い合わせページです。お問い合わせの方はフォームよりご連絡ください。';
+      }  else if(is_page('about')) {//About meについて
+        $description = 'STARTLINEのAboutページです。前田龍汰のポートフォリオを紹介しています。';
+      }
+  ?>
+  <meta name="description" content="<?php echo $description; ?>">
+  <!-- // ディスクリプション -->
+
+  <!-- タイトル -->
+  <?php if( is_home()): ?>
+      <title><?php bloginfo('name'); ?></title>
+  <?php else: ?>
+      <title><?php wp_title(' | ', true, 'right'); ?><?php bloginfo('name'); ?></title>
+  <?php endif; ?>
+  <!-- // タイトル -->
+  <!-- ogp -->
+  <?php
+      if(is_home()) {
+        $ogtype = 'website';
+      } else {
+        $ogtype = 'article';
+      }
+  ?>
+  <meta property="og:type" content="<?php echo $ogtype; ?>">
+  <meta property="og:url" content="<?php echo("http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>">
+  <meta property="og:description" content="<?php echo $description; ?>">
+  <meta property="og:image" content="<?php bloginfo('template_url'); ?>/images/common/ogimage.png">
+  <meta property="og:title" content="<?php wp_title(' | ', true, 'right'); ?><?php bloginfo('name'); ?>">
+  <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+  <!-- /ogp -->
+
   <!-- css -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/aos.css">
+
+
+
 
   <!-- js/先に使いたい機能を上に持ってくる、defer=読み込み順を確定させる -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/swiper-bundle.min.css">
   <script src="<?php echo get_template_directory_uri(); ?>/js/swiper-bundle.min.js"></script>
   <!-- 外部読み込み -->
   <?php 
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('main-script', get_template_directory_uri().'/js/script.js');
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css');
     wp_head();
   ?>
@@ -56,38 +119,6 @@
                 </li>
               </ul>
             <?php } ?>
-
-
-            <!-- <ul class="gnavi-list">
-
-                <li class="l-nav l-nav_about">
-                  <a href="/about/">
-                    <p>About me</p>
-                    <p class="header_nav_bottom">{$item->attr_title}</p>
-                  </a>
-                </li>
-
-                <li class="l-nav l-nav_work">
-                  <a href="/works/">
-                    <p>Work</p>
-                    <p class="header_nav_bottom">制作物</p>
-                  </a>
-                </li>
-
-                <li class="l-nav l-nav_blog">
-                  <a href="/blog/">
-                    <p>Blog</p>
-                    <p class="header_nav_bottom">ブログ</p>
-                  </a>
-                </li>
-
-                <li class="l-nav l-nav_contact">
-                  <a href="/contact/">
-                    <p>Contact</p>
-                    <p class="header_nav_bottom">お問い合わせ</p>
-                  </a>
-                </li>
-            </ul> -->
           </nav>
         </div>
         <!--ハンバーガーメニュー -->
